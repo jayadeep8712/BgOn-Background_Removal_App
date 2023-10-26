@@ -1,6 +1,6 @@
 # BGRemover - BgOn
 
-![BGRemover - BgOn Logo](https://static1.sw-cdn.net/files/cms/how-it-works/upload-icon-materials.png)
+![BGRemover - BgOn Logo]([https://static1.sw-cdn.net/files/cms/how-it-works/upload-icon-materials.png](https://static1.sw-cdn.net/files/cms/how-it-works/upload-icon-materials.png))
 
 Welcome to BGRemover - BgOn, a powerful tool for easy background removal from your images. With Node.js and our BGRemove API, you can quickly enhance your image editing workflow.
 
