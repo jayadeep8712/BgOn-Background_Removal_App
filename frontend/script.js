@@ -1,6 +1,6 @@
 // Global Variables
-let imageURL = null;        // The Transparent Result URL
-let currentFile = null;     // <--- THE FIX: Stores the actual file to process
+let imageURL = null;         
+let currentFile = null;      
 
 // --- DOM Elements ---
 const uploadArea = document.getElementById('uploadArea');

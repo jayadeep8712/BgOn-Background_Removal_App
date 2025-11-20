@@ -373,7 +373,7 @@ nav a.active::after {
 
 /* Gallery Section */
 .gallery-section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .gallery-title {
@@ -394,7 +394,7 @@ nav a.active::after {
 .comparison-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 30px;
 }
 
 .comparison-item {
@@ -410,12 +410,14 @@ nav a.active::after {
     border-radius: 16px;
     border: 1px solid var(--dark-border);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    cursor: col-resize;
 }
 
-.bg-pattern, .img-box > img {
+.bg-pattern, .img-box > img{    
     width: 100%;
     display: block;
     pointer-events: none;
+    object-fit: cover;
 }
 
 .img-wrap {
@@ -425,6 +427,7 @@ nav a.active::after {
     top: 0;
     overflow: hidden;
     height: 100%;
+ 
 }
 
 .original-img {
