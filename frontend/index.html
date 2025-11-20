@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bgon - Background Wizard</title>
+
+    <!-- Connect to the icon server early -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪻</text></svg>">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/3.0.4/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class='bx bx-magic-wand logo-icon'></i>
+                    <span>BGON</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Remove Image Backgrounds<br>Like Magic</h1>
+            <p>100% Automatically and <span class="highlight">Free</span></p>
+            <div class="upload-card">
+                <div class="upload-area" id="uploadArea">
+                    <i class='bx bx-cloud-upload upload-icon'></i>
+                    <p class="upload-text">Drag & drop your image here</p>
+                    <p>or</p>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                        <i class='bx bx-image-alt'></i> Browse Files
+                    </button>
+                    <div class="file-info" id="fileInfo"></div>
+                </div>
+                
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Processing your image...</p>
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn btn-primary" id="uploadBtn" onclick="submitHandler()" disabled>
+                        <i class='bx bx-magic-wand'></i> Remove Background
+                    </button>
+                    <button class="btn btn-accent" id="downloadBtn" onclick="downloadFile()" disabled>
+                        <i class='bx bx-download'></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="resultsSection">
+        <div class="container">
+            <h2 class="results-title">Your Processed Image</h2>
+            <div class="image-comparison">
+                <div class="image-container">
+                    <h3>Original Image</h3>
+                    <img id="originalPreview" class="image-preview" src="" alt="Original image">
+                </div>
+                <div class="image-container">
+                    <h3>Background Removed</h3>
+                    <img id="processedPreview" class="image-preview" src="" alt="Processed image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose <span class="highlight">BGON</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class='bx bx-bolt feature-icon'></i>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-desc">Process images in seconds with our optimized AI algorithms. No waiting in queues.</p>
+                </div>
+                <div class="feature-card">
+                    <i class='bx bx-shield-alt feature-icon'></i>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-desc">Your images are processed securely and never stored on our servers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class='bx bx-badge-check feature-icon'></i>
+                    <h3 class="feature-title">Professional Quality</h3>
+                    <p class="feature-desc">Get pixel-perfect results with clean edges and preserved details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title gallery-title">Background <span class="highlight">Gallery</span></h2>
+            
+            <!-- Interactive Comparison Gallery -->
+            <div class="comparison-gallery">
+                <div class="comparison-item">
+                    <div class="img-box">
+                        <img src="../assets/transparent.png" alt="transition" class="bg-pattern">
+                        <div class="img-wrap">
+                            <img src="../assets/original.jpg" class="original-img" alt="Original image">
+                        </div>
+                        <span class="divider">
+                            <img src="../assets/arrow.png" alt="Arrow" class="arrow">
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-item">
+                        <div class="img-box">
+                            <img src="../assets/trans.png" alt="transition" class="bg-pattern">
+                            <div class="img-wrap">
+                                <img src="../assets/cat.jpg" class="original-img" alt="Cat">
+                            </div>
+                            <span class="divider">
+                                <img src="../assets/arrow.png" alt="Arrow" class="arrow">
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="img-box">
+                            <img src="../assets/transpg.png" alt="transition" class="bg-pattern">
+                            <div class="img-wrap">
+                                <img src="../assets/girl.jpg" class="original-img" alt="Girl">
+                            </div>
+                            <span class="divider">
+                                <img src="../assets/arrow.png" alt="Arrow" class="arrow">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-item">
+                        <div class="img-box">
+                            <img src="../assets/transpop.png" alt="transition" class="bg-pattern">
+                            <div class="img-wrap">
+                                <img src="../assets/op.jpg" class="original-img" alt="Object">
+                            </div>
+                            <span class="divider">
+                                <img src="../assets/arrow.png" alt="Arrow" class="arrow">
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="img-box">
+                            <img src="../assets/transpl.png" alt="transition" class="bg-pattern">
+                            <div class="img-wrap">
+                                <img src="../assets/Lotus.jpg" class="original-img" alt="Lotus">
+                            </div>
+                            <span class="divider">
+                                <img src="../assets/arrow.png" alt="Arrow" class="arrow">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class='bx bx-magic-wand logo-icon'></i>
+                    <span>BGON</span>
+                </div>
+                <p>Remove backgrounds from images automatically and free of charge</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" class="social-link"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="social-link"><i class='bx bxl-github'></i></a>
+                </div>
+                <p>© 2024 Bgon - Background Wizard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <p id="notificationText">Your background has been removed successfully!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
