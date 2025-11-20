@@ -1,6 +1,6 @@
 <div align="center">
 
-# BGON - Background Wizard
+# 🪻BGON - Background Wizard
 
 ![Node](https://img.shields.io/badge/Node.js-v14%2B-green)
 ![Express](https://img.shields.io/badge/Express-v4-lightgrey)
@@ -9,7 +9,6 @@
 **Bgon** is a powerful, sleek, and easy-to-use web application that removes image backgrounds automatically using AI. Built with a modern dark-mode UI, it features a seamless Drag & Drop interface, interactive gallery sliders, and a robust Node.js backend.
 
 </div>
----
 
 ## 📸 Screenshots
 
@@ -27,7 +26,7 @@
 *   **👀 Instant Preview:** Side-by-side comparison of the original and processed image.
 *   **🔒 Privacy Focused:** Images are processed securely and never stored permanently.
 
----
+<br>
 
 ## 🛠️ Tech Stack
 
@@ -42,7 +41,7 @@
 *   **Axios:** Communicating with the removal API.
 *   **Dotenv:** Secure Environment Variable management.
 
----
+<br>
 
 ## ⚙️ Installation & Setup
 
@@ -104,7 +103,7 @@ bgon/
     ├── script.js         # Logic for uploads and sliders
     └── assets/           # Images for the gallery
 ```
-
+<br>
 ## 📖 How to Use
 
 1. Ensure the Backend server is running (node server.js).
